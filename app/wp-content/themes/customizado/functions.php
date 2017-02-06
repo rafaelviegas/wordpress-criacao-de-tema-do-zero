@@ -29,4 +29,17 @@ function add_post_type_imoveis(){
 
     register_post_type('imovel', $args);
 }
+
 add_action('init','add_post_type_imoveis');
+
+function register_menu_navegation(){
+    register_nav_menu('header-menu','main-menu');
+}
+
+add_action('init','register_menu_navegation');
+
+function getTitle(){
+    bloginfo('name');
+    if(!is_home()) echo ' | ';
+    the_title();
+}

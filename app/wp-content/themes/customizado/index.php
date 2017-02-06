@@ -1,8 +1,10 @@
-<?php get_header(); ?>
+<?php 
+    $css_especifico = 'index';
+    require_once('header.php');
+?>
 
 <main class="home-main">
     <div class="container">
-        <h1>Bem-vindo!</h1>
         <ul class="imoveis-listagem">
             <?php 
                 $loop = new WP_Query(array('post_type' => 'imovel'));
