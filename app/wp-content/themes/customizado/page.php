@@ -48,11 +48,4 @@
     </article>
 </main>
 
-
-
-
-          
-        
-
-
 <?php get_footer(); ?>

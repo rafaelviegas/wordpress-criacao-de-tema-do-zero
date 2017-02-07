@@ -43,3 +43,27 @@ function getTitle(){
     if(!is_home()) echo ' | ';
     the_title();
 }
+function register_taxonomy_localizacao(){
+
+    $nomeSingular = 'Localização';
+    $nomePlural = 'Localizações';
+
+
+    $labels = array(
+        'name' => $nomePlural,
+        'singular_name' => $nomeSingular,
+        'edit_item' => 'Editar ' . $nomeSingular,
+        'add_new_item' => 'Adicionar ' . $nomeSingular,
+        'separate_items_with_commas' => 'Separe as ' . $nomePlural .' por vírgulas'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'hierarchical' => true
+    );
+
+    register_taxonomy('localizacao','imovel', $args); 
+}
+
+add_action('init','register_taxonomy_localizacao');
